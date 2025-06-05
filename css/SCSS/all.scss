@@ -1,0 +1,662 @@
+// 檔案匯入
+@use "reset" as *;
+@use "variables" as *;
+@use "mixins" as *;
+@use "helper" as *;
+@use "base" as *;
+
+// 區塊一_nav
+.l-nav-list {
+  @include l-flex(center, center);
+  gap: 2.5rem;
+  padding: 1.5rem 0;
+}
+
+.nav-link {
+  @include font-style($fs-xl, black, $fw-bold);
+  @include bg-hover($hover-color: $color-primary);
+}
+
+// 區塊二_header區塊
+
+.l-header {
+  @include l-flex();
+}
+
+.l-person {
+  width: 50%;
+  max-width: 960px;
+}
+
+.l-title {
+  width: 50%;
+  max-width: 960px;
+  @include l-flex(center);
+  flex-direction: column;
+  background-image: url(https://i.ibb.co/0y5Dcpw9/right-box-pic.png);
+  padding-left: 5rem;
+}
+
+.main-title {
+  @include font-style($fs-xxl, $color-primary, $fw-black);
+  margin-bottom: 3.375rem;
+  line-height: 1;
+}
+
+.sub-title {
+  @include font-style($fs-xl, $color-primary, $fw-bold);
+}
+
+.l-intro {
+  padding: 5rem 2.5rem;
+  margin: -181px 80px 0 763px;
+  background: white;
+}
+
+.intro-txt {
+  @include font-style($fs-xl);
+  margin-bottom: 1rem;
+}
+
+.l-intro-icon {
+  @include l-flex();
+}
+
+.contact-link {
+  text-align: center;
+  @include bg-hover(null, null, $color-fourth);
+  padding: 0.625rem;
+}
+
+// 區塊三_service區塊
+
+main {
+  padding: 0 0.5rem;
+}
+
+.l-service {
+  max-width: 1296px;
+  margin-bottom: 5rem;
+}
+
+.section-title {
+  @include font-style(4rem, null, $fw-bold);
+}
+
+.service-title {
+  margin-bottom: 2rem;
+}
+
+.l-plan {
+  max-width: 1076px;
+  margin: 0 auto 64px auto;
+  @include l-flex();
+}
+
+.plan-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.plan-pic {
+  width: 60%;
+  max-width: 636px;
+}
+
+.l-plan-content {
+  @include l-flex(center);
+  flex-direction: column;
+  width: 40%;
+  max-width: 480px;
+}
+
+.l-item {
+  padding: 1.5rem;
+  max-width: 480px;
+  background: white;
+}
+
+.item-right {
+  margin-left: -100px;
+}
+
+.item-left {
+  margin-right: -100px;
+  z-index: 1;
+}
+
+.plan-title {
+  position: relative;
+  @include font-style($fs-xl, null, $fw-bold);
+  padding-top: 1.25rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    @include size(30px, 2.5px);
+    top: 10px;
+    background: $color-primary;
+    border-radius: 2.5px;
+  }
+}
+
+.l-more {
+  @include l-flex(flex-end, center);
+}
+
+.more-title {
+  @include font-style($fs-xl, null, $fw-bold);
+  margin-right: 0.5rem;
+}
+
+.more-pic {
+  border: solid 1px black;
+  border-radius: 2.5rem;
+  @include size(2.5rem, 2.5rem);
+  padding: 0.5rem;
+  @include bg-hover(null, black, $color-primary, white);
+}
+
+// 區塊四_blog區塊
+
+.blog-title {
+  max-width: 1296px;
+  margin-bottom: 1.5rem;
+}
+
+.l-card {
+  max-width: 1432px;
+  padding: 0 3.5%;
+  position: relative;
+}
+
+.l-card-list {
+  @include l-flex();
+  gap: 1.5rem;
+  max-width: 1296px;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.card {
+  width: calc((100% - 48px) / 3);
+  flex-shrink: 0;
+  overflow: hidden;
+
+  &-pic {
+    margin-bottom: 1rem;
+  }
+
+  &-date {
+    margin-bottom: 0.25rem;
+  }
+
+  &-tag {
+    @include font-style($fs-m, $color-primary, $fw-medium);
+    margin-right: 0.125rem;
+  }
+
+  &-title {
+    @include font-style($fs-l, null, $fw-bold);
+    margin: 5px 0;
+    line-height: 2rem;
+  }
+
+  &-text {
+    @include font-style(null, $color-secondary);
+    margin-bottom: 0.625rem;
+  }
+}
+
+.main-btn {
+  padding: 0.375rem 0.75rem;
+  @include border(solid 1px, 2.5rem);
+  @include bg-hover($color-primary, white, white, $color-primary);
+}
+
+.sub-btn {
+  padding: 0.5rem 1rem;
+  @include border(solid 1px, 2.5rem);
+  @include bg-hover(
+    $color-fourth,
+    $color-secondary,
+    $color-primary,
+    $color-fourth
+  );
+}
+
+.tag-container {
+  @include l-flex(null, center);
+  gap: 1%;
+}
+
+.l-blog {
+  padding-bottom: 140px;
+}
+
+.next {
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+.pre {
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+
+// 區塊_career區塊
+
+.l-career {
+  max-width: 1296px;
+  margin: 0 auto 5rem auto;
+}
+
+.career-title {
+  margin-bottom: 1.5rem;
+}
+
+.l-career-content {
+  @include l-flex();
+  margin: 0 auto 2.5rem auto;
+}
+
+.l-career-pic {
+  max-width: 745px;
+  padding: 1.5rem;
+  background: $color-third;
+}
+
+.l-career-intro {
+  flex: 1;
+}
+
+.career-intro {
+  @include font-style(null, null, $fw-bold);
+  padding: 144px 40px 80px 40px;
+  max-width: 526px;
+  position: relative;
+}
+
+.career-top {
+  margin-left: -190px;
+  margin-top: 29px;
+  background: white;
+}
+
+.career-bottom {
+  margin-top: -60px;
+  margin-left: 10px;
+  background: $color-fourth;
+}
+
+.career-txt {
+  margin-bottom: 1.5rem;
+}
+
+.career-txt::before {
+  content: "";
+  width: 30px;
+  height: 2.5px;
+  top: 100px;
+  background: blue;
+  border-radius: 2.5px;
+  position: absolute;
+}
+
+.highlight {
+  @include font-style(null, $color-primary);
+}
+
+.third-btn {
+  padding: 0.5rem 1rem;
+  @include border(solid 1px, 2.5rem);
+  @include bg-hover(white, $color-primary, $color-primary, white);
+  @include font-style(null, null, $fw-bold);
+}
+
+.l-case {
+  max-width: 1296px;
+  padding: 1.5rem;
+  background: $color-fourth;
+}
+
+.l-case-list {
+  @include l-flex(space-between, center);
+  gap: 1.5rem;
+}
+
+.case-card {
+  max-width: 294px;
+  width: 294px;
+}
+
+.case-pic {
+  @include size(5rem, 5rem);
+  margin-bottom: 1rem;
+}
+
+.case-title {
+  @include font-style($fs-m, null, $fw-bold);
+  margin-bottom: 0.5rem;
+}
+
+.case-txt li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.case-txt li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  @include size(1rem, 1rem);
+  background-image: url(https://i.ibb.co/fdYGZD47/check.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.case-txt li:last-of-type {
+  margin-bottom: 1rem;
+}
+
+.case-txt {
+  border-bottom: solid 1px black;
+  margin-bottom: 1rem;
+}
+
+// 區塊六
+
+.l-letter {
+  @include l-flex();
+}
+
+.letter-pic {
+  width: 50%;
+  max-width: 960px;
+}
+
+.l-subcribe {
+  width: 50%;
+  max-width: 960px;
+  @include l-flex(center, center);
+  background: url("https://i.ibb.co/kgNzNRYn/subcribe-bg.png");
+}
+
+.subcribe-letter {
+  background: white;
+  padding: 5rem 2.5rem;
+  width: 83%;
+  max-width: 800px;
+}
+
+.subcribe-title {
+  margin-bottom: 1rem;
+}
+
+.subcribe-txt {
+  @include font-style(1.25rem);
+  margin-bottom: 1.5rem;
+}
+
+.subcribe-form {
+  max-width: 800px;
+}
+
+.subcribe-form input {
+  display: block;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: $color-sixth;
+  @include font-style(1.25rem, $color-secondary);
+}
+
+input[type="text"]:nth-of-type(1) {
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"]:nth-of-type(2) {
+  margin-bottom: 1.5rem;
+}
+
+// 區塊七
+
+.l-contact {
+  max-width: 1296px;
+  padding: 0 0.75rem;
+}
+
+.contact-title {
+  margin-bottom: 1.5rem;
+}
+
+.contact-item {
+  @include l-flex(space-between, center);
+  padding: 1rem 0;
+  border-bottom: solid 1px;
+}
+
+.contact-content {
+  @include l-flex(null, center);
+  gap: 0.5rem;
+}
+
+.contact-email {
+  @include font-style(2rem);
+  margin-right: 1rem;
+  text-decoration: underline;
+  @include bg-hover(null, black, $color-fourth);
+}
+
+.contact-txt {
+  @include font-style(1.75rem);
+}
+
+.contact-arrow {
+  @include size(1.5rem, 1.5rem);
+  @include bg-hover(null, black, $color-fourth, $color-primary);
+}
+
+/* 區塊八_footer區塊 */
+
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+// 媒體判斷
+
+@media (max-width: 1400px) {
+  .l-intro {
+    padding: 1rem;
+    margin: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  // 區塊一
+
+  .l-person {
+    width: 100%;
+  }
+
+  .l-title {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .main-title {
+    @include font-style(3.25rem, null, $fw-black);
+    margin-bottom: 0.75rem;
+  }
+
+  // 區塊三
+
+  .l-plan {
+    flex-direction: column;
+  }
+
+  .plan-pic {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .l-plan-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .l-item {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .item-right {
+    margin-left: 0px;
+  }
+
+  // 區塊四
+
+  .next {
+    top: 100%;
+  }
+
+  .pre {
+    top: 100%;
+    left: 70%;
+  }
+
+  .l-card {
+    padding: 0;
+  }
+
+  .l-card-list {
+    max-width: 856px;
+  }
+
+  .card {
+    // width:416px;
+    width: calc((100% - 24px) / 2);
+  }
+
+  // 區塊五
+
+  .l-career-content {
+    flex-direction: column;
+  }
+
+  .l-career-pic {
+    margin: 0 auto;
+  }
+
+  .career-intro {
+    max-width: 100%;
+    padding: 5.5rem 1.5rem 2.5rem 1.5rem;
+  }
+
+  .career-top {
+    margin: 0;
+  }
+
+  .career-bottom {
+    margin: 0;
+  }
+
+  .career-txt::before {
+    content: "";
+    width: 30px;
+    height: 2.5px;
+    top: 60px;
+    background: blue;
+    border-radius: 2.5px;
+    position: absolute;
+  }
+
+  .l-case-list {
+    max-width: 38.25rem;
+  }
+
+  // 區塊六
+
+  .l-letter {
+    flex-direction: column;
+  }
+
+  .letter-pic {
+    width: 100%;
+  }
+
+  .l-subcribe {
+    width: 100%;
+  }
+
+  .subcribe-letter {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  // 區塊二
+  .main-title {
+    @include font-style(3.25rem);
+  }
+
+  // 區塊三
+
+  .section-title {
+    @include font-style(3rem);
+  }
+
+  // 區塊七
+  .contact-email,
+  .contact-txt {
+    @include font-style(1.5rem);
+  }
+
+  .l-card-list {
+    max-width: 26rem;
+    margin: 0 auto;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 376px) {
+  // 區塊二
+
+  .l-title {
+    padding-bottom: 12.5rem;
+  }
+
+  .l-intro {
+    @include font-style(1.5rem);
+    padding: 2.5rem 1.5rem;
+    margin: -179px 0.75rem 0 0.75rem;
+  }
+
+  // 區塊三
+
+  .l-service {
+    padding-top: 4rem;
+  }
+
+  // 區塊六
+
+  .l-subcribe {
+    width: 100%;
+    padding: 0.75rem;
+  }
+
+  .subcribe-letter {
+    width: 100%;
+  }
+}

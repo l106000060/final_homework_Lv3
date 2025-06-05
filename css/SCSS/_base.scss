@@ -1,0 +1,36 @@
+@use "variables" as *;
+
+// google font
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap");
+
+// 設定border-box
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: 1.5;
+  background: #fbfbfb;
+}
+
+.l-main {
+  padding: 0 12px;
+}
+
+img {
+  vertical-align: middle;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  color: black;
+}

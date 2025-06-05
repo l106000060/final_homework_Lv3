@@ -1,0 +1,89 @@
+/* 文字樣式 */
+@mixin font-style($size: null, $color: null, $weight: null) {
+  @if $size != null {
+    font-size: $size;
+  }
+  @if $color != null {
+    color: $color;
+  }
+  @if $weight != null {
+    font-weight: $weight;
+  }
+}
+
+// 項目符號開啟
+@mixin list-style($type: disc, $padding-left: 2rem) {
+  list-style-type: $type;
+  padding-left: $padding-left;
+}
+
+// 彈性布局
+@mixin l-flex($jc: null, $ai: null) {
+  display: flex;
+  flex-wrap: wrap;
+
+  @if $jc != null {
+    justify-content: $jc;
+  }
+
+  @if $ai != null {
+    align-items: $ai;
+  }
+}
+
+@mixin size($width: null, $height: null) {
+  @if $width != null {
+    width: $width;
+  }
+  @if $height != null {
+    height: $height;
+  }
+}
+
+@mixin border($border: null, $radius: null) {
+  @if $border != null {
+    border: $border;
+  }
+  @if $radius != null {
+    border-radius: $radius;
+  }
+}
+
+@mixin bg-hover(
+  $bg-color: null,
+  $color: null,
+  $hover-bg: null,
+  $hover-color: null
+) {
+  @if $bg-color != null {
+    background: $bg-color;
+  }
+  @if $color != null {
+    color: $color;
+  }
+
+  &:hover {
+    @if $hover-bg != null {
+      background: $hover-bg;
+    }
+    @if $hover-color != null {
+      color: $hover-color;
+    }
+  }
+}
+
+// 自動算出高度與截文樣式。
+// 參數，行高、顯示行。
+@mixin truncate-multiline($line-height, $lines) {
+  line-height: $line-height;
+  height: calc(#{$line-height} * #{$lines});
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.truncate-multiline {
+  @include truncate-multiline(150%, 2);
+}
